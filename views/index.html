@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercise tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Create new user -->
+      <form
+        class="form-group"
+        id="user"
+        action="/api/exercise/new-user"
+        method="POST"
+      >
+        <h3 class="form-group">Create a new user</h3>
+        <p class="form-group">
+          <code>POST /api/exercise/new-user</code>
+        </p>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="username"
+          class="form-control"
+          required
+        />
+        <input class="form-control" type="submit" value="Submit" />
+      </form>
+
+      <!-- Create exercise form -->
+      <form id="exercise" action="/api/exercise/add" method="POST">
+        <h3 class="form-group">Add exercise</h3>
+        <p class="form-group">
+          <code>POST /api/exercise/add</code>
+        </p>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="username"
+          class="form-control"
+          required
+        />
+        <input
+          type="text"
+          id="description"
+          name="description"
+          placeholder="Description"
+          class="form-control"
+          required
+        />
+        <input
+          type="number"
+          id="duration"
+          name="duration"
+          placeholder="Duration"
+          class="form-control"
+          required
+        />
+        <input
+          type="date"
+          id="date"
+          name="date"
+          class="form-control"
+          required
+        />
+        <input type="submit" value="Submit" class="form-control" />
+      </form>
+
+      <!-- Show all exercises -->
+      <form
+        class="form-group"
+        id="user"
+        action="/api/exercise/log/:username"
+        method="GET"
+      >
+        <h3>Show all exercises of user</h3>
+        <p>
+          <code>GET /api/exercise/log/:username</code>
+        </p>
+      </form>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
